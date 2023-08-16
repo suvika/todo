@@ -7,11 +7,9 @@
             <% if(ttasks[i].done) isChecked=true; %>
             <li>
                 <form action="/checkClick" method="POST">
-                    <input type="checkbox" <% if(isChecked) {%> checked <% } %> name="number" value=<%=i%> onChange="this.form.submit()">
+                    <input type="checkbox" id="checkbox" <% if(isChecked) {%> checked <% } %> name="number" value=<%=i%> onChange="this.form.submit()">
                     <label for="checkbox"><% if(isChecked) {%> <s> <% } %><%=ttasks[i].taskName%><% if(isChecked) {%> </s> <% } %></label>
-
-                </form>
-                
+                </form>                
             </li>
         <% } %>
     </ul>
