@@ -1,6 +1,23 @@
 <%- include("partials/header.ejs") %>
 
-<%- include("partials/todaytasklist.ejs") %>
+<% if(locals.ttasks) {%>
+    <ul>
+        <%for (let i = 0; i < ttasks.length; i++) { %>
+            <% let isChecked=false; %>
+            <% if(ttasks[i].done) isChecked=true; %>
+            <li>
+                <form action="/checkClick" method="POST">
+                    <input type="checkbox" <% if(isChecked) {%> checked <% } %> name="number" value=<%=i%> onChange="this.form.submit()">
+                    <label for="checkbox"><% if(isChecked) {%> <s> <% } %><%=ttasks[i].taskName%><% if(isChecked) {%> </s> <% } %></label>
+
+                </form>
+                
+            </li>
+        <% } %>
+    </ul>
+    <% } else {%>
+    
+    <% } %>
 
 
 <form action="/todaySubmit" method="POST">
