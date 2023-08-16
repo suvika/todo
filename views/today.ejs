@@ -1,0 +1,11 @@
+<%- include("partials/header.ejs") %>
+
+<%- include("partials/todaytasklist.ejs") %>
+
+
+<form action="/todaySubmit" method="POST">
+    <input type="text" name="newTodayTaskName" placeholder="New item">
+    <input type="submit" value="Add">
+</form>
+
+<%- include("partials/footer.ejs") %>
