@@ -1,0 +1,10 @@
+.container > li {
+    list-style: none;
+  }
+
+  .container {
+    padding: 10px;
+    background-color: gold;
+    display: flex;
+    gap: 5px;
+  }
