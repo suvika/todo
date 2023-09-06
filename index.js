@@ -24,9 +24,7 @@ app.post("/todaySubmit", (req, res) => {
   });
     console.log("todayTasks submit: ");
     console.log(todayTasks);
-    res.render("today.ejs", {
-      ttasks: todayTasks
-    });
+    res.redirect("/");
 });
 
 app.post("/checkClick", (req, res) => {
@@ -36,9 +34,7 @@ app.post("/checkClick", (req, res) => {
   todayTasks[req.body["number"]].done=!(todayTasks[req.body["number"]].done);
   console.log("todayTasks checkClick: ");
   console.log(todayTasks);
-  res.render("today.ejs", {
-    ttasks: todayTasks
-  });
+  res.redirect("/");
 });
 
 app.listen(port, () => {
